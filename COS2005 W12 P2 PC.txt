@@ -1,0 +1,53 @@
+Define class WINDOW:
+	Define initialization sequence:
+		Object WINDOW = new window
+		Object FRM = new frame within WINDOW
+		Text variable INSTRUCTIONS = "..."
+		Object MSG_INSTRUCTIONS = new message box within FRM w/ param. (message = INSTRUCTIONS)
+		Decimal variable TOTAL = 0.0
+		Object CHBTN_1 = new check box within FRM w/ param. (message = "Oil change", command = OIL_CHANGE)
+		Object CHBTN_2 = new check box within FRM w/ param. (message = "Lube job", command = LUBE_JOB)
+		Object CHBTN_3 = new check box within FRM w/ param. (message = "Radiator flush", command = RADIATOR_FLUSH)
+		Object CHBTN_4 = ...
+		Object CHBTN_5 = ...
+		Object CHBTN_6 = ...
+		Object CHBTN_7 = ...
+		# Object BTN_TOTAL = new button within FRM w/ param. (command = TOTAL_COST)
+		Object BTN_EXIT = new button within FRM w/ param. (command = destroy window)
+		
+		Setup MSG_INSTRUCTIONS in FRM w/ param. (row = 1, column = 1, column span = 3)
+		Setup CHBTN_1 w/ param. (row = 2, column = 1, column span = 3)
+		Setup CHBTN_2 w/ param. (row = 3, column = 1, column span = 3)
+		Setup CHBTN_3 w/ param. (row = 4, column = 1, column span = 3)
+		Setup CHBTN_4 w/ param. (row = 5, column = 1, column span = 3)
+		Setup CHBTN_5 w/ param. (row = 6, column = 1, column span = 3)
+		Setup CHBTN_6 w/ param. (row = 7, column = 1, column span = 3)
+		Setup CHBTN_7 w/ param. (row = 8, column = 1, column span = 3)
+		# Setup BTN_TOTALw/ param. (row = 9, column = 1, column span = 2)
+		Setup BTN_EXIT w/ param. (row = 9, column = 2, column span = 2)
+		Setup FRM
+		Start window loop
+		
+	Define function OIL_CHANGE:
+		TOTAL = TOTAL + 30
+		
+	Define function LUBE_JOB:
+		TOTAL = TOTAL + 20
+		
+	Define function RADIATOR_FLUSH:
+		TOTAL = TOTAL + 40
+	
+	Define function TRANSMISSION_FLUID:
+		TOTAL = TOTAL + 100
+	
+	Define function INSPECTION:
+		TOTAL = TOTAL + 35
+	
+	Define function MUFFLER_REPLACEMENT:
+		TOTAL = TOTAL + 200
+	
+	Define function TIRE_ROTATION:
+		TOTAL = TOTAL + 20
+	
+If used as standalone:
+	WINDOW1 = WINDOW

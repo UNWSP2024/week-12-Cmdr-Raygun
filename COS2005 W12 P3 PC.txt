@@ -1,0 +1,36 @@
+Define class WINDOW:
+	Define initialization sequence:
+		Text variable INSTRUCTIONS = "..."
+		Decimal variable TOTAL = 0.0
+		Integer variable STATE_RDBTN = 0
+		Object WINDOW = new window
+		Object FRM = new frame within WINDOW
+		Object MSG_INSTRUCTIONS = new message box within FRM box w/ param. (message = INSTRUCTIONS) within FRM
+		Object RDBTN_1 = new radio button within FRM w/ param. (variable = STATE_RDBTN, value = 1, message = "Daytime (6:00 A.M. through 5:59 P.M.)", command = CALC_TOTAL)
+		Object RDBTN_2 = new radio button within FRM w/ param. (variable = STATE_RDBTN, value = 2, message = "Evening (6:00 P.M. through 11:59 P.M.)", command = CALC_TOTAL)
+		Object RDBTN_3 = new radio button within FRM w/ param. (variable = STATE_RDBTN, value = 3, message = "Daytime (12:00 A.M. through 5:59 A.M.)", command = CALC_TOTAL)
+		Object MINUTES = new text object linked to ENTRY_MINUTES
+		Object ENTRY_MINUTES = new text entry within FRM
+		Object LBL_TOTAL = new label within FRM w/ param. (message = "Call total: ", TOTAL)
+		Object BTN_EXIT = new button within FRM
+		
+		Setup MSG_INSTRUCTIONS w/ param. (row = 1, column = 1, column span = 3)
+		Setup RDBTN_1 w/ param. (row = 2, column = 1, column span = 3)
+		Setup RDBTN_2 w/ param. (row = 3, column = 1, column span = 3)
+		Setup RDBTN_3 w/ param. (row = 4, column = 1, column span = 3)
+		Setup ENTRY_MINUTES w/ param. (row = 5, column = 1, column span = 1)
+		Setup LBL_TOTAL w/ param. (row = 5, column = 2, column span = 2)
+		Setup BTN_EXIT w/ param. (row = 6, column = 2, column span = 2)
+		Setup FRM in WINDOW
+		Start window loop
+		
+	Define function CALC_TOTAL:
+		If index of STATE_RDBTN = 1:
+			TOTAL = MINUTES * 0.02
+		If index of STATE_RDBTN = 2:
+			TOTAL = MINUTES * 0.12
+		If index of STATE_RDBTN = 3:
+			TOTAL = MINUTES * 0.05
+	
+If used as standalone:
+	WINDOW1 = WINDOW

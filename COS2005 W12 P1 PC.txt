@@ -1,0 +1,26 @@
+Define class WINDOW:
+	Define initialization sequence:
+		Text variable INSTRUCTIONS = "..."
+		Object WINDOW = new window
+		Object FRM = new frame within WINDOW
+		Object MSG_INSTRUCTIONS = new message box w/ param. (message = INSTRUCTIONS) within FRM
+		Object ENTRY_TANK_CAPACITY = new text entry within FRM
+		Object ENTRY_FULL_TANK_MI = new text entry within FRM
+		Object TANK_CAPACITY = new text object linked to ENTRY_TANK_CAPACITY
+		Object FULL_TANK_MI = new text object linked to ENTRY_FULL_TANK_MI
+		Object BTN_CALC = new button within FRM w/ param. (command = CALC_MPG w/ param. (TANK_CAPACITY, FULL_TANK_MI))
+		Object BTN_EXIT = new button within FRM
+		
+		Setup MSG_INSTRUCTIONS in FRM w/ param. (row = 1, column = 1, column span = 3)
+		Setup ENTRY_TANK_CAPACITY w/ param. (row = 2, column = 1, column span = 3)
+		Setup ENTRY_FULL_TANK_MI w/ param. (row = 3, column = 1, column span = 3)
+		Setup BTN_CALC in FRM w/ param. (row = 4, column = 1, column span = 2)
+		Setup BTN_EXIT in FRM w/ param. (row = 4, column = 2, column span = 2)
+		Setup FRM in WINDOW
+		Start window loop
+		
+	Define function CALC_MPG w/ param. (TANK_CAPACITY, FULL_TANK_MI):
+		Return value(s) to calling function (FULL_TANK_MI / TANK_CAPACITY)
+	
+If used as standalone:
+	WINDOW1 = WINDOW
